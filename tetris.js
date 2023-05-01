@@ -275,15 +275,17 @@ checkRotation = function(centerBlock){
 }
 rotate = function(){
     lastMove = "";
-    const centerBlock = blocksArrActive[1];  
-    // Check if rotating will move the tetris piece out of boundaries
-    if(checkRotation(centerBlock) == true){
-        // Rotate the tetris piece
-        for (let i = 0; i < blocksArrActive.length; i++) {
-            const relX = blocksArrActive[i][0] - centerBlock[0];
-            const relY = blocksArrActive[i][1] - centerBlock[1];
-            blocksArrActive[i][0] = centerBlock[0] - relY;
-            blocksArrActive[i][1] = centerBlock[1] + relX;
+    if(oPiece != true){
+        const centerBlock = blocksArrActive[1];  
+        // Check if rotating will move the tetris piece out of boundaries
+        if(checkRotation(centerBlock) == true){
+            // Rotate the tetris piece
+            for (let i = 0; i < blocksArrActive.length; i++) {
+                const relX = blocksArrActive[i][0] - centerBlock[0];
+                const relY = blocksArrActive[i][1] - centerBlock[1];
+                blocksArrActive[i][0] = centerBlock[0] - relY;
+                blocksArrActive[i][1] = centerBlock[1] + relX;
+            }
         }
     }
 }
