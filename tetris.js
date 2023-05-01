@@ -327,7 +327,7 @@ drawGame = function(){
     console.log("Move using arrow keys, Up arrow rotates");
     console.log("Down arrow makes piece move quicker");
     console.log("\n");
-    console.log("Press e to quit");
+    console.log("Press e to restart");
 }
 moveAnimation = function(){
     // First, clear the boardTetris of all tetris pieces
@@ -471,7 +471,16 @@ pauseGame = function(){
     intervalIds.forEach(id => clearInterval(id));
     // clear the array
     intervalIds = [];
-    setTimeout(() => {
-        console.log("Game over. " +points + " points");
-    }, 500);
+
+    nextPieceBoard = [];
+    boardTetris = [];
+    blocksArr = [];
+    blocksArrActive = [];
+    intervalIds = [];
+    tetris = "[]";
+    lastMove;
+    points = 0;
+    blockY = 0;
+    blockX = 7;
+    startGameTetris();
 }
