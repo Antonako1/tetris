@@ -23,6 +23,13 @@ let points = 0;
 // Defines spawnpoints
 let blockY = 0;
 let blockX = 7;
+    let iPiece = false;
+    let oPiece = false;
+    let tPiece = false;
+    let jPiece = false;
+    let lPiece = false;
+    let sPiece = false;
+    let zPiece = false;
 
 
 reset = function(){
